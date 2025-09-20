@@ -6,5 +6,9 @@ A python app that shows the mouse cursor position and the color in the screen.
 CURL: `curl -fsSL https://raw.githubusercontent.com/panadalpro/mouseutils/main/install.sh | bash`
 WGET: `wget -qO- https://raw.githubusercontent.com/panadalpro/mouseutils/main/install.sh | bash`
 
+## Usage
+To open it, type in your terminal / Powershell:
+`mouseutils`
+
 #### Windows
 Coming soon!
