@@ -1,5 +1,5 @@
 import colorsys
-import mss
+import mss, sys
 import pyautogui as _pg
 import customtkinter as ctk
 import tkinter as tk
@@ -19,18 +19,18 @@ def main():
     # root.update()         # force creation
     root.focus_force()    # ensure it gets focus
 
-    root.overrideredirect(True)        # no title bar / controls
+    if sys.platform == "darwin":
+        from AppKit import NSApplication, NSApp, NSWindowCollectionBehaviorCanJoinAllSpaces
+        NSApp.activateIgnoringOtherApps_(True)
+
+    root.overrideredirect(True) # no title bar / controls
     root.wm_attributes("-topmost", True)
     root.configure(borderwidth=0)
     root.pack_propagate(False)
     root.geometry("300x160+0+0")
 
-    # Menubar
-    menubar = tk.Menu(root)
-    root.config(menu=menubar)
-
-    # Later, remove the menu bar completely:
-    root.config(menu="")   # <- this removes the app's menu bar
+    # Remove the menu bar completely:
+    root.config(menu=tk.Menu())
 
     # --- Clipboard + beep helper ---
     def copy_to_clipboard(text: str):
