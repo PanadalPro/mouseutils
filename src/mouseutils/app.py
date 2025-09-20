@@ -103,7 +103,7 @@ def main():
     label_hsl = ctk.CTkLabel(root, text="", width=160)
     label_hsl.place(x=150, y=117, anchor=ctk.CENTER)
 
-    hint_label = ctk.CTkLabel(root, text="Press 1, 2, or 3 to copy.")
+    hint_label = ctk.CTkLabel(root, text="Press 1, 2, or 3 to copy values.")
     hint_label.place(x=150, y=145, anchor=ctk.CENTER)
 
     # --- Values to copy (updated on each tick) ---
